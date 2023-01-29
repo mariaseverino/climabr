@@ -15,8 +15,9 @@
           debounce="500"
         ></ion-searchbar>
         <ion-button (click)="onGeolocation()" fill="clear"
-          >Meu Local</ion-button
-        >
+          >Meu Local
+          <ion-icon slot="start" name="locate"></ion-icon>
+        </ion-button>
 
         <app-error-message
           *ngIf="errorMessage"
