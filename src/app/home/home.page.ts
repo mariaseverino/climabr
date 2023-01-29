@@ -36,7 +36,6 @@ export class HomePage {
         await this.cityService.searchCityByGeolocation(position.coords)
       );
     });
-    // await this.searchGeolocationService.
   }
 
   async onSelect(city: City) {
