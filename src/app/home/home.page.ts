@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { City } from '../domain/entities/city.model';
 import { SearchCityService } from '../domain/services/search-city.service';
 import { SearchGeolocationService } from '../domain/services/search-geolocation.service';
-import { GeolocationService } from '@ng-web-apis/geolocation';
 
 @Component({
   selector: 'app-home',
