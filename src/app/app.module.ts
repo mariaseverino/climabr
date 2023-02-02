@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchCityService } from './domain/services/search-city.service';
 import { LoadWeatherService } from './domain/services/load-weather.service';
-import { FakeWeatherRepository } from './data/fake/fake-weather-repository';
 import { LocalCityRepository } from './data/local/local-city-repository';
 import { RemoteWeatherRepository } from './data/remote/remote-weather-repository';
 import { SearchGeolocationService } from './domain/services/search-geolocation.service';
