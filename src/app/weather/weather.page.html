@@ -22,7 +22,7 @@
           <div class="temperature">
             {{ weather.currentTemp | number: '1.0-0' }}<sup><small>ºC</small></sup>
           </div>
-          <img src="assets/tempestade.png" />
+          <img src={{weather.details[0].conditionIconURL}} />
           <h3>{{ weather.details[0].conditionDesc | uppercase }}</h3>
           <p>☂ {{weather.details[0].pop | number: '1.0-0'}}% | ♨ {{weather?.details[0].humidity | number: '1.0-0'}}%</p>
           <ion-button color="success" (click)="onDetails()"> Ver Detalhes </ion-button>
