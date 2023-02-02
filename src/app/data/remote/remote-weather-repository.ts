@@ -27,38 +27,22 @@ export class RemoteWeatherRepository extends WeatherRepository {
   }
 
   private toEntity(data: any): Weather {
-    console.log('entrou');
-    console.log(data);
     const numOfDailyWeathers = 3;
     const weather: Weather = {
-      currentTemp: data.main.temp,
+      currentTemp: data.list[0].temp.day,
       details: [],
     };
 
-    console.log('uhu ');
-    weather.details.push({
-      conditionDesc: data.weather[0].description,
-      conditionIconURL: `${environment.apiConfig.iconURL}/${data.weather[0].icon}@2x.png`,
-      pop: 0.03 * 100, //pop
-      humidity: data.main.humidity,
-      minTemp: data.main.temp_min,
-      maxTemp: data.main.temp_max,
-    });
-    console.log(':) ');
-
-    // for (let i = 0; i < numOfDailyWeathers; i++) {
-    //   console.log('uhu ');
-    //   weather.details.push({
-    //     conditionDesc: data.list[i].weather[0].description,
-    //     conditionIconURL: `${environment.apiConfig.iconURL}/${data[i].weather[0].icon}@2x.png`,
-    //     pop: data[i].main.temp * 100, //pop
-    //     humidity: data[i].main.humidity,
-    //     minTemp: data[i].main.temp_min,
-    //     maxTemp: data[i].main.temp_max,
-    //   });
-    //   console.log(':) ');
-    // }
-
+    for (let i = 0; i < numOfDailyWeathers; i++) {
+      weather.details.push({
+        conditionDesc: data.list[i].weather[0].description,
+        conditionIconURL: `${environment.apiConfig.iconURL}/${data.list[i].weather[0].icon}@2x.png`,
+        pop: data.list[i].pop*100,
+        humidity: data.list[i].humidity,
+        minTemp: data.list[i].temp.min,
+        maxTemp: data.list[i].temp.max,
+      });
+    }
     return weather;
   }
 }

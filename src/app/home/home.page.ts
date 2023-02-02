@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { City } from '../domain/entities/city.model';
 import { SearchCityService } from '../domain/services/search-city.service';
+import { SearchGeolocationService } from '../domain/services/search-geolocation.service';
 import { GeolocationService } from '@ng-web-apis/geolocation';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +17,8 @@ export class HomePage {
   constructor(
     private readonly cityService: SearchCityService,
     private readonly router: Router,
-    private readonly geolocation$: GeolocationService,
-    private searchGeolocationService: GeolocationService
-  ) {}
+    private readonly searchGeolocationService: SearchGeolocationService
+  ) { }
 
   async onSearch(query: string) {
     try {
@@ -31,12 +30,14 @@ export class HomePage {
   }
 
   async onGeolocation() {
-    this.geolocation$.pipe(take(1)).subscribe(async (position) => {
-      this.cities.push(
-        await this.cityService.searchCityByGeolocation(position.coords)
-      );
-    });
+    try {
+      const coords = await this.searchGeolocationService.getGeolocation();
+      this.cities.push(await this.cityService.searchCityByGeolocation(coords));
+    } catch (error) {
+      this.errorMessage = error.message;
+    }
   }
+
 
   async onSelect(city: City) {
     await this.router.navigateByUrl(`/weather/${city.id}`, {
