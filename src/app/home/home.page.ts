@@ -31,6 +31,7 @@ export class HomePage {
   async onGeolocation() {
     try {
       const coords = await this.searchGeolocationService.getGeolocation();
+      this.cities = [];
       this.cities.push(await this.cityService.searchCityByGeolocation(coords));
     } catch (error) {
       this.errorMessage = error.message;
