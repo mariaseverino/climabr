@@ -39,7 +39,7 @@ export class SearchCityService {
 
     let menor = {
       city: null,
-      distance: 1000000000000000,
+      distance: Number.MAX_VALUE,
     };
 
     allCities.forEach((city) => {
