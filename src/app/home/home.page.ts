@@ -28,6 +28,11 @@ export class HomePage {
     }
   }
 
+  /**
+   * Busca a cidade mais próxima de acordo a localização atual do usuário
+   * @function
+   * @async
+   */
   async onGeolocation() {
     try {
       const coords = await this.searchGeolocationService.getGeolocation();
@@ -37,7 +42,6 @@ export class HomePage {
       this.errorMessage = error.message;
     }
   }
-
 
   async onSelect(city: City) {
     await this.router.navigateByUrl(`/weather/${city.id}`, {

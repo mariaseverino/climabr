@@ -1,14 +1,25 @@
 import { GeolocationService } from '@ng-web-apis/geolocation';
 import { firstValueFrom } from 'rxjs';
-import { Coordinate } from '../entities/city.model';
 
+/**
+ * Classe responsável pelo serviço de Geolocalização
+ * @class
+ */
 export class SearchGeolocationService {
-  public coordinates: Coordinate;
-
+  /**
+   * Cria um serviço de geolocalização
+   * @constructor
+   * @param {GeolocationService} geolocation$ - objeto com os utilitários de geolocalização
+   */
   constructor(private readonly geolocation$: GeolocationService) { }
 
+  /**
+   * Captura as coordenadas do dispositivo de acesso
+   * @function
+   * @async
+   * @returns {GeolocationCoordinates} - Coordenadas capturadas pelo gps do dispositivo
+   */
   async getGeolocation() {
-    const location = await firstValueFrom(this.geolocation$);    
-    return location.coords;
+    return (await firstValueFrom(this.geolocation$)).coords;
   };
 }
