@@ -1,29 +1,95 @@
 # ClimaBR
 
-Aplicação web para consulta da previsão do tempo de cidades brasileiras.
+<div align="center">
+<img alt="icone de tempo" src="src/assets/icon/favicon.png" width="150px">
+</div>
+<br>
 
-# Como utilizar?
+<div align="center">
+  <p>
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/mariaseverino/climabr?color=6799EA&logoColor=6799EA&style=for-the-badge">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mariaseverino/climabr?color=6799EA&logoColor=6799EA&style=for-the-badge">
+  </p>
+</div>
 
-Clone este repositório.
+<p align="center">
+ <a href="Sobre">Sobre</a> •
+ <a href="Tecnologias utilizadas">Tecnologias utilizadas</a> •
+ <a href="Estrutura de Diretorios">Estrutura de diretórios</a> •
+ <a href="Como executar o projeto">Como executar o projeto</a>
+</p>
 
-Entre na pasta do projeto e execute o comando abaixo para instalar as dependências:
+## ✨ Sobre
 
-`npm install`
+O sistema implementado tem o objetivo fazer consulta da previsão do tempo de cidades brasileiras. Tendo a possibilidade de encontrar a cidade digitando o nome dela, ou pela localização atual da pessoa.
 
-Acesse o site https://openweathermap.org/api, faça seu cadastro e crie uma chave de API.
+📌 **_Este trabalho é derivado do projeto [ClimaBR](https://github.com/ufla-gcc132/climabr), desenvolvido pelo professor [Paulo Junior](https://github.com/paulojunior-ufla)._**
 
-Crie um arquivo chamado `api-config.ts` no diretório `src/environment` do projeto, contendo o conteúdo abaixo (não se esqueça de alterar a propriedade `key` para a sua chave de API):
+## 🚀 Tecnologias utilizadas
+
+- [Ionic](https://ionicframework.com/)
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [OpenWeather Api](https://openweathermap.org/api)
+- [Haversine Distance](https://github.com/dcousens/haversine-distance)
+- [API de Geolocalização](https://github.com/ng-web-apis/geolocation)
+
+## 🗃️ Estrutura de diretórios
+
+O sistema foi desenvolvido utilizando arquitetura em camadas, visando o desacoplamento do código para melhor manuntenção.
+
+```
+src
+├── app
+│   ├── data
+│   │   ├── fake
+│   │   ├── local
+│   │   └── remote
+│   ├── domain
+│   │   ├── entities
+│   │   ├── errors
+│   │   └── services
+│   │       └── protocols
+│   ├── home
+│   ├── shared
+│   │   └── components
+│   └── weather
+│       └── components
+├── assets
+├── environments
+└── theme
+```
+
+## 🤔 Como utilizar?
+
+### 🚨 Pré requisito
+
+Antes de começar, você vai precisar ter instalado em sua máquina o [Node.js](https://nodejs.org/) e o [Ionic](https://ionicframework.com/). Também vai precisar fazer cadastro no site do [OpenWeather](https://openweathermap.org/api) para obter a chave da api.
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/mariaseverino/climabr.git
+
+# Acesse a pasta do projeto
+$ cd climabr
+
+# Instale as dependências
+$ npm install
+```
+
+Crie um arquivo chamado api-config.ts no diretório src/environment do projeto, contendo o conteúdo abaixo (não se esqueça de alterar a propriedade key para a sua chave de API):
 
 ```ts
 export const openWeatherConfig = {
-    key: '<sua-chave-de-api>',
-    URL: 'https://api.openweathermap.org/data/2.5/onecall',
-    iconURL: 'http://openweathermap.org/img/wn',
-}
+  key: "<sua-chave-de-api>",
+  URL: "https://api.openweathermap.org/data/2.5/forecast/daily?",
+  iconURL: "https://openweathermap.org/img/wn",
+};
 ```
 
-Para abrir a aplicação, execute o comando:
+```bash
+# Por fim execute a aplicação
+$ ionic serve
+```
 
-`ionic serve`
-
-Enjoy!
+♥ Enjoy!
