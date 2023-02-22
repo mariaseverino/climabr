@@ -16,7 +16,7 @@
  <a href="Sobre">Sobre</a> •
  <a href="Tecnologias utilizadas">Tecnologias utilizadas</a> •
  <a href="Estrutura de Diretorios">Estrutura de diretórios</a> •
- <a href="Como executar o projeto">Como executar o projeto</a>
+ <a href="Como utilizar?">Como utilizar?</a>
 </p>
 
 ## ✨ Sobre
