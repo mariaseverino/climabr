@@ -21,7 +21,7 @@
 
 ## ✨ Sobre
 
-O sistema implementado tem o objetivo de fazer consulta da previsão do tempo de cidades brasileiras. Tendo a possibilidade de encontrar a cidade digitando o nome dela, ou pela localização atual da pessoa.
+O sistema implementado tem o objetivo de fazer consulta da previsão do tempo de cidades brasileiras, tendo a possibilidade de encontrar a cidade digitando o nome dela, ou pela localização atual da pessoa.
 
 📌 **_Este trabalho é derivado do projeto [ClimaBR](https://github.com/ufla-gcc132/climabr), desenvolvido pelo professor [Paulo Junior](https://github.com/paulojunior-ufla)._**
 
