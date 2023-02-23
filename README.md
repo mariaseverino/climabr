@@ -99,4 +99,4 @@ $ ionic serve
 - [Maria Rita](https://github.com/mariaseverino)
 - [Nicolas de Oliveira](https://github.com/Nxxxlxs)
 
-♥ Enjoy!
+Enjoy!
