@@ -92,4 +92,11 @@ export const openWeatherConfig = {
 $ ionic serve
 ```
 
+## 👥 Contribuidores
+
+- [Fernando Roque](https://github.com/rock051)
+- [Júlia Ribeiro](https://github.com/solstice-orca)
+- [Maria Rita](https://github.com/mariaseverino)
+- [Nicolas de Oliveira](https://github.com/Nxxxlxs)
+
 ♥ Enjoy!
